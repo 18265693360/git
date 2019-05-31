@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="">
+    <input type="checkbox" value="男人" name="sex" checked="checked">男人
+    <input type="checkbox" value="女人" name="sex">女人
+    <input type="checkbox" value="中性人" name="sex">人妖
+</form>
+<button id="btn">查看是否选中</button>
+</body>
+<script src="jquery.js"></script>
+<script>
+    //原生中
+    var inputs = document.querySelectorAll('input');
+    var btn = document.querySelector('#btn');
+
+    // btn.onclick = function () {
+    //     // console.log(inputs[i].checked);
+           // 查看表单状态就用原生dom.checked
+    //     // console.log(inputs[i].value);
+    //
+    //     console.log(inputs[i].getAttribute('checked'));
+            // 查看表单中的属性值就用这个getAttribute
+    //     console.log(inputs[i].getAttribute('value'));
+    // }
+
+
+
+    //JQ does
+    $('#btn').click(function () {
+        $(':input:checkbox').filter(function (index, item) {
+            console.log($(item).attr('checked'));
+            //获取属性值状态就是使用attr
+            // console.log($(item).prop('checked'));//获取boolean值
+        })
+    })
+    //prop修改状态 disable....
+
+</script>
+</html>

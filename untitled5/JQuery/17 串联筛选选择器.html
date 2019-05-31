@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul class="container">
+    <li>我是内容</li>
+    <li>我是内容</li>
+    <li class="oo">我是内容</li>
+    <li>我是内容 <span>小婊砸</span> </li>
+    <li>我是内容</li>
+    <li>我是内容</li>
+    <li>我是内容</li>
+    <li>我是内容</li>
+    <li>我是内容</li>
+    <li>我是内容</li>
+</ul>
+</body>
+<script src="jquery.js"></script>
+<script>
+    // .end() 	    返回到最近一次“破坏”之前的状态
+    // .addBack()	表示加上自身
+    // .index()	    选中元素在其亲兄弟姐妹中的索引值
+
+    // $('.container').find('span').css('color', 'red')
+    //     .end().css('border', '1px solid #f00')
+    //.end() 回到ul
+
+    // $('li').eq(4).nextAll().css('background', 'deepskyblue').addBack().css('background', '#409')
+    // $('li').eq(4).nextAll().addBack().css('background', 'deepskyblue')
+
+    console.log($('.oo').index());
+
+</script>
+</html>

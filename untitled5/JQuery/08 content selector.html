@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+         .container{
+             width: 100px;
+             height: 100px;
+             border: 1px solid #000;
+         }
+    </style>
+</head>
+<body>
+<ul>
+    <li>我是内容1</li>
+    <li>我是内容2</li>
+    <li>我是内容3</li>
+    <li>我是内容4 <strong>哈哈哈哈</strong></li>
+    <li>我是内容5</li>
+    <li>我是内容6</li>
+    <li>我是内容7</li>
+    <li>我是内容8</li>
+    <li>我是内容9</li>
+    <li>我是内容10</li>
+</ul>
+<div class="container"></div>
+<div class="container">
+    <h1>我是内容</h1>
+</div>
+</body>
+<script src="jquery.js"></script>
+<script>
+    // $('li:contains("我是内容2")').css('background', '#f00')
+    // $('li:has(strong)').css('background', '#ff0')
+    $('.container:empty').css('background', '#ff0')//记得 加样式
+    // $('.container:parent').css('background', '#f00') //work
+
+</script>
+</html>

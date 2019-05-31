@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .spe, .spe + li{
+            color: #f00;
+        }
+    </style>
+</head>
+<body>
+<div class="grand-father">
+    <h2>父标题</h2>
+    <div>
+        <h2>我是孙子标题</h2>
+    </div>
+
+</div>
+
+<!--js中驼峰-->
+<!--html 连接符-->
+
+
+<p>我是内容</p>
+<p>我是内容</p>
+<p>我是内容</p>
+<p>我是内容</p>
+<p>我是内容</p>
+<p>我是内容</p>
+<p>我是内容</p>
+<p>我是内容</p>
+<p>我是内容</p>
+<p>我是内容</p>
+
+<ul>
+    <li>我是内容</li>
+    <li class="spe">我是内容</li>
+    <li>我是内容</li>
+    <li>我是内容</li>
+    <li>我是内容</li>
+</ul>
+</body>
+<script src="jquery.js"></script>
+<script>
+
+    // > 后代选择器
+
+
+
+
+
+   //     选择器，也叫选择符，是用来选择DOM元素的符号。
+   //     jQuery选择器分为三类：
+   //     •	基本选择器；
+   //     •	过滤选择器；
+   //     •	筛选选择器
+
+    //原生
+    // var ps = document.querySelectorAll('p');
+    //
+    // for (var i = 0; i<ps.length; i++){
+    //     ps[i].style.color = "#f00"
+    // }
+
+    //JQ
+    $('p').css('color', '#ff0')
+
+    $('.grand-father>h2').css('color','$f00')
+
+    $('ul>li.spe~li').css('color', '#f00')
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

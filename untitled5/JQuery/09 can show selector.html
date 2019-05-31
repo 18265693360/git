@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<!--可见性选择器-->
+<!--:hidden	选择隐藏的元素-->
+<!--:visible	选择显示的元素-->
+
+<div class="box"></div>
+<div class="box" style="display: none"></div>
+<button id="btn">切换显示</button>
+
+
+</body>
+<script src="jquery.js"></script>
+<script>
+    $('#btn').click(function () {
+        $('.box:hidden').css('background', 'red');
+        // $('.box').toggle()
+        // $('.box:visible').css('background', 'red')
+    })
+</script>
+</html>

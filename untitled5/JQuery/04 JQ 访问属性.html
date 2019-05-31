@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="input">
+<button>变化</button>
+</body>
+<script src="jquery.js"></script>
+<script>
+    //JQ控制标签属性
+    // 核心方法：attr();
+    // 如果attr()有两个参数，表示修改，第一个参数表示要修改的标签属性名，第二个参数表示要修改的标签属性值。
+
+    //原生
+    // var input = document.getElementById('input');
+    //
+    // setTimeout(function () {
+    //     input.setAttribute('type', 'checkbox')
+    // },1000)
+    // 访问
+    console.log(oninput.getAttribute('type'));
+
+
+    //JQ
+    setTimeout(function () {
+        $('#input').attr('type', 'checkbox')
+    },2000)
+
+    //JQ访问
+    console.log($('#input').attr('type'));
+</script>
+</html>

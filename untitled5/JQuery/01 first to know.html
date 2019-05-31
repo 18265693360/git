@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+        }
+        .active{
+            background: #f00;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<button class="btn">切换</button>
+</body>
+<script src="jquery.js"></script>
+<script>
+    var btn = document.querySelector('.btn');
+    console.log(btn, '原生语法');//原生实实在在生成DOM
+    //JQ 就是使用JQ的各种方法
+
+
+    // var box = document.getElementById('.box');
+    // var btn = document.getElementById('.btn');
+    //
+    // btn.onclick = function () {
+    //     box.classList.toggle('active')
+    // }
+
+    //事件源   事件类型 事件函数
+    console.log($('.btn'));
+    $('.btn').click(function () {
+        $('.box').toggleClass('active');
+    })
+
+</script>
+</html>

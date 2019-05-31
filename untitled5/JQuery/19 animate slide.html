@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background: #409eff;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<button>显示</button>
+<button>隐藏</button>
+<button>切换</button>
+</body>
+<script src="jquery.js"></script>
+<script>
+    // .show() 	    显示动画
+    // .hide()	    隐藏动画
+    // .toggle()	切换显示
+
+    $('button').eq(0).click(function () {
+        $('.box').show(2000,function () {
+            console.log('在动画结束的时候开始回调函数');
+        });
+    })
+    $('button').eq(1).click(function () {
+        $('.box').hide(1600,function () {
+            console.log('结束的时候隐藏');
+        });
+    })
+    $('button').eq(2).click(function () {
+        $('.box').toggle(1500,function () {
+            console.log('切换');
+        })
+    })
+</script>
+</html>

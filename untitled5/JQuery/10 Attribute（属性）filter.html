@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*input[checked*=checked]{*/
+            /*color: #f00;*/
+        /*}*/
+        
+        /*结尾有的属性选中*/
+        /*input[checked$=checked]{*/
+            /*background: #ff0;*/
+        /*}*/
+        /*开头有checked属性*/
+        /*input[checked^=checked]{*/
+            /*background: #ff0;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<!--<input type="text" name="123">-->
+<!--<input type="number" name="34">-->
+<!--<input type="password" name="checked">-->
+
+<!--checked就是一个属性-->
+
+<input type="password" checked="i am checke">
+<input type="text" checked="checked id a">
+<input type="number" checked="checked">
+</body>
+<!--<script>-->
+    <!--//原生js实现-->
+    <!--var inputs = document.querySelectorAll('input');-->
+
+    <!--for (var i = 0; i < inputs.length; i++){-->
+        <!--if (inputs[i].getAttribute('checked').indexOf('checked')!=-1){-->
+             <!--inputs[i].style.background = 'red';-->
+        <!--}-->
+    <!--}-->
+<!--</script>-->
+<script src="jquery.js"></script>
+<script>
+    // $('input[checked=checked]').css('background', 'red')
+    //包含
+    // $('input[checked*=checked]').css('background', 'red')
+
+    // $('input[name!="checked"]').css('background', 'red')//worked 仅仅支持原生属性
+
+    //选择开头包含i的
+    $('input[checked^=i]').css('background', '#f00')
+
+    //选择结尾包含a的
+    $('input[checked$=a]').css('background', '#ff0')
+
+</script>
+
+
+
+
+
+
+</html>

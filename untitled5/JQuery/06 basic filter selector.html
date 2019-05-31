@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*.box{*/
+            /*width: 200px;*/
+            /*height: 200px;*/
+            /*border: 1px solid #000;*/
+            /*background: #409eff;*/
+        /*}*/
+        /*.box1{*/
+            /*width: 200px;*/
+            /*height: 200px;*/
+            /*background: #fd7e14;*/
+        /*}*/
+        
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            background: #f00;
+        }
+    </style>
+</head>
+<body>
+
+<!--<div class="box"></div>-->
+<!--<div class="box1"></div>-->
+<!--<button class="btn">切换</button>-->
+
+<div class="box" id="b01"></div>
+<div class="box"></div>
+<button class="btn">切换</button>
+<!--filter 过滤-->
+
+<!--<ul>-->
+    <!--<li>我是项目1</li>-->
+    <!--<li>我是项目2</li>-->
+    <!--<li class="box">我是项目3</li>-->
+    <!--<li>我是项目4</li>-->
+    <!--<li>我是项目5</li>-->
+    <!--<li>我是项目6</li>-->
+    <!--<li>我是项目7</li>-->
+    <!--<li>我是项目8</li>-->
+    <!--<li>我是项目9</li>-->
+    <!--<li>我是项目10</li>-->
+<!--</ul>-->
+<!--<h1>一级</h1>-->
+<!--<h2>二级</h2>-->
+<!--<h3>三级</h3>-->
+
+</body>
+<script src="jquery.js"></script>
+<script>
+    // $('li').css('color', '#f00')
+    //选中所有li
+
+    //过滤选择器就是选指定的改变元素
+    //eq(正负都可以)按照索引值选
+    // $('li:eq(num)').css('color', '#ff0')
+    // $('li:eq(0)').css('color', '#ff0')//过滤第几个，注意索引值是从0开始
+    // $('li:eq(1)').css('color', '#ff0')
+    // $('li:eq(-2)').css('color', '#ff0')
+    // //按照开始 结束
+    // $('li:first').css('background', '#409eff')//过滤第一个
+    // $('li:last').css('fontSize', '50px')//过滤最后一个
+
+    // $('li:not(".box")').css('fontSize','100px')//取非
+    // 除了选定元素之外  选择相反条件 not里面继续写选择器 外单内双 内双外单
+
+    // $('li:even').css('background', '#888')//选定偶数
+    // $('li:odd').css('fontSize', '20px')//选定奇数的元素 因为索引从0开始
+    //odd为 1 3 5 7  event 0 2 4 6 8
+
+
+    //gt()  lt()
+    // $('li:gt(2)').css('fontSize', '30px')//必须添加 px
+    // $('li:lt(4)').css('background', '#ff0')
+
+    // $(':header').css('color', '#409eff')//命中所有标题标签
+
+
+    //toggle 动画 默认值400
+    // $('.btn').click(function () {
+    //     //             默认值400ms
+    //     $('.box').toggle(400,function () {
+    //         console.log('动画执行完毕后');
+    //     })
+    // })
+
+
+    // $('.btn').click(function () {
+    //     //             默认值400ms
+    //                               //先执行动画
+    //     // 回调函数再继续执行一次动画  然后下面继续执行然后返回
+    //     $('.box').toggle(400,function go() {
+    //         // console.log('动画执行完毕后');
+    //         $('.box').toggle(400,go)
+    //     })
+    // })
+
+
+    // $('.btn').click(function () {
+    //               //默认值400ms
+    //                     //先执行动画
+    //     // 回调函数再继续执行一次动画  然后下面继续执行然后返回
+    //     $('.box').toggle(400,function () {
+    //         // console.log('动画执行完毕后');
+    //         $('.box').toggle(400, arguments.callee)
+    //                                //上面是匿名函数
+    //                            // argument.callee就代表函数本身
+    //     })
+    // })
+
+
+
+    //animated 选中动画元素 （过滤） 动画必须是JQ动画 css无效
+    $('#b01').toggle(800, function () {
+        $('#b01').toggle(800, arguments.callee)
+    })
+    $('.btn').click(function () {
+        $(':animated').css('background', '#fff')
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

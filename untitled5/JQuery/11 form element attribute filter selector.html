@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+
+    <!--<select value="1" disabled>-->
+        <!--<option value="1">man</option>-->
+        <!--<option value="2">woman</option>-->
+
+    <!--</select> -->
+    用户名：<input type="text">
+    <br>
+    密码：<input type="password">
+    <br>
+    性别：
+    <select  multiple>
+        <option value="1">man</option>
+        <option value="2">woman</option>
+        <option value="3">or</option>
+    </select>
+    <br>
+    <input type="radio" name="colors" id="red">红色
+    <br>
+    <input type="radio" name="colors" id="blue">蓝色
+    <br>
+    <input type="radio" name="colors" id="green">绿色
+    喜欢的食物：
+    <input type="checkbox" value="1" name="favorite">红烧带鱼
+    <br>
+    <input type="checkbox" value="2" name="favorite">三文鱼
+    <br>
+    <input type="checkbox" value="3" name="favorite">米饭
+    <button>提交</button>
+    <input type="image" src="./imgs/01.png" value="按钮">
+    喜欢的电影
+    <input type="file">
+    <!--<input type="image" src="jquery.js">-->
+
+</form>
+<input type="submit" value="input按钮">
+<button type="submit">another more</button>
+<button type="reset" >重置</button>
+<!-- button 中没有value="重置"-->
+
+<button  type="button" onclick="displayResult()">
+    显示input类型
+</button>
+<!--<form action="">-->
+    <!--用户名：<input type="text">-->
+    <!--<br>-->
+    <!--密码：<input type="password">-->
+    <!--<br>-->
+    <!--性别：-->
+    <!--<select>-->
+        <!--<option value="1">男性</option>-->
+        <!--<option value="2">女性</option>-->
+    <!--</select>-->
+    <!--<button>提交</button>-->
+
+
+<!--</form>-->
+<!--<form>-->
+    <!--<input type="radio" value="1" name="hi">运球-->
+    <!--<br>-->
+    <!--<input type="radio" value="2" name="haha">上篮-->
+    <!--<br>-->
+    <!--<input type="radio" value="3" name="hit">突破-->
+    <!--<br>-->
+    <!--<button>提交</button>-->
+<!--</form>-->
+</body>
+<script src="jquery.js"></script>
+<script>
+    // :input       选中所有表单元素
+    // :text        选中所有的文本框
+    // :password    选中所有的密码框
+    // :radio       选中所有的单选框框
+    // :checkbox    选中所有的复选框框
+    // :submit      选中所有的提交按钮框
+    // :image       选中所有的图片框
+    // :reset       选中所有的重置框
+    // :button	    同标签选择器button
+    // :file	    选择文件上传按钮
+    // input:hidden	选择隐藏的表单元素
+    // :enabled	    选择可用的表单元素
+    // :disabled	选择不可用的表单元素
+    // :checked	    选择选中的单选框和复选框
+    // :selected	选择选中的下拉列表的选项
+    //仅仅适用于 ooption元素 不适用单选框 复选框（单选框和复选框仅仅使用checked）
+
+
+
+    // function displayResult() {
+    //     var type = document.getElementById('red').type;
+    //     alert(type)
+    // }
+
+    // $(':input').css('background', '#ff0')
+    // $(':input:text').css('background', '#ff0')
+    // $(':input:password').css('background', '#ff0')
+    // $(':radio').css('background', '#ff0')
+    // $(':radio:eq(1)').attr('checked', 'checked')//可以获得属性
+
+    // $(':checkbox:eq(2)').attr('checked', 'checked')
+    // $(':submit').css('color', 'red')
+    // $(':image').css('width','200px')
+    // $(':image').css('width','200')
+
+    // $(':reset').css('width', 600)//worked
+
+    // $(':button').css('width', '500')
+    // $(':file').css('color', '#f00')
+
+    // $(':input:disabled').css('width', '100')
+    // $(':input:enabled').css('width', '300')
+
+    $('select').change(function () {
+        $('option:selected').css('color', '#f00')
+    })
+
+
+
+
+</script>
+</html>

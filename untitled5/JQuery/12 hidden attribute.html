@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+              <!--七牛云存储地址-->
+<form action="http://upload-z1.qiniup.com" method="post"
+enctype="multipart/form-data">
+<!--编码方式 multipart/form-data上传图片专用-->
+<!--token值-->
+
+    <p>密码是：3452</p>
+    <input type="text" disabled>
+    <!--直接进控制台elements 中value添加密码-->
+    <!--//disable不可选中-->
+
+    <!--传统的无hidden值时 会显示token值-->
+    <input type="text" name="token"value="token">
+    <input type="file" name="file">
+    <button>提交</button>
+    <!--token值就是为了不要让别人使用自己的服务器-->
+    <!--hidden可以隐藏这些数据 因为用户不会想要这些数据-->
+</form>
+</body>
+<script src="jquery.js"></script>
+<script>
+    //怎么用hidden
+    var token = ''
+
+    //hidden 选中隐藏的表单元素  此时表单中已经有token
+    // 尽管value 中没有token
+    $(':input:hidden').val(token)
+</script>
+</html>

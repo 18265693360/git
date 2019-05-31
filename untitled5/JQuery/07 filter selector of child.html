@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        /*:root{*/
+            /*background: #f00;*/
+        /*}*/
+        li{
+            list-style: none;
+            border: 1px solid #000;
+            height: 60px;
+        }
+        /*li:nth-child(2){*/
+            /*background: #ffdf7e;*/
+        /*}*/
+        /*li:first-child{*/
+            /*background: #ffff00;*/
+        /*}*/
+        /*li:last-child{*/
+            /*background: #ff0000;*/
+        /*}*/
+        /*li:nth-last-child(2){*/
+            /*background: #ffdf7e;*/
+        /*}*/
+        /*li:nth-child(2n){*/
+            /*background: #fd7e14;*/
+        /*}*/
+        /*li:nth-child(2n+1){*/
+            /*background: #fd7e14;*/
+        /*}*/
+        /* it work li:nth-child(-n+4){*/
+            /*background: #fd7e14;*/
+        /*}*/
+        /*li:nth-child(even){*/
+            /*background: #ffdf7e;*/
+        /*}*/
+
+        /*it work too*/
+        /*li:nth-of-type(4){*/
+            /*background: #ff0;*/
+        /*}*/
+        
+    </style>
+</head>
+<body>
+<!--<ul>-->
+    <!--<li>我是内容1</li>-->
+    <!--<li>我是内容2</li>-->
+    <!--<li>我是内容3</li>-->
+    <!--<li>我是内容4</li>-->
+    <!--<li>我是内容5</li>-->
+    <!--<li>我是内容6</li>-->
+    <!--<li>我是内容7</li>-->
+    <!--<li>我是内容8</li>-->
+    <!--<li>我是内容9</li>-->
+    <!--<li>我是内容10</li>-->
+<!--</ul>-->
+
+
+<div class="container">
+    <h1>我是一级标题1</h1>
+    <h1>我是一级标题2</h1>
+    <h1>我是一级标题3</h1>
+    <h1>我是一级标题4</h1>
+
+    <p>我是内容1</p>
+    <p>我是内容2</p>
+    <p>我是内容3</p>
+    <p>我是内容4</p>
+</div>
+
+
+<!--<div class="container">-->
+    <!--<p>独生子</p>-->
+    <!--<h2>我是二级标题</h2>-->
+    <!--<h2>我是👌</h2>-->
+<!--</div>-->
+</body>
+<script src="jquery.js"></script>
+<script>
+    // $('li:nth-child(1)').css('background', '#f00')
+    // $('li:nth-last-child(2)').css('background', '#f00')
+
+    // :only-child	取出每家的独生子女
+    // $('p:only-child').css('background', '#f00')
+    // // :nth-of-type()	选择每家的同类孩子中的第几个
+    // $('p:nth-of-type(3)').css('background', '#f00')
+    $('p:nth-of-type(2)').css('background', '#f00')
+
+    $('.container').css('border', '1px solid #f00')
+    $('p:only-of-type').css('background', '#ff0')
+
+
+
+
+
+</script>
+</html>

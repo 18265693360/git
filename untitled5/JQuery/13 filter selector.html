@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style></style>
+</head>
+<body>
+<ul>
+    <li data-index="1">我是内容</li>
+    <li data-index="2">我是内容</li>
+    <li class="spe" data-index="3">我是内容</li>
+    <li data-index="4" id="xxx">我是内容</li>
+    <li data-index="5">我是内容</li>
+    <li data-index="6">我是内容</li>
+    <li data-index="7">我是内容</li>
+    <li data-index="8">我是内容</li>
+    <li data-index="9">我是内容</li>
+    <li data-index="10">我是内容</li>
+</ul>
+</body>
+<script src="jquery.js"></script>
+<script>
+    // $('li').filter('.spe').css('background', 'red')
+    // $('li').filter('[data-index=998]').css('background', 'red')
+
+    // 原生就是控制台出现类数组 console.log(document.querySelectorAll('li'));
+    // JQ就是有很多JQ方法 console.log($('li'));
+    // $('li').filter(function (index, item) {
+    //     // 在过滤器函数中无法使用JQ自带的方法
+    //     // 那就使用$()将原生转换成 JQ对象
+    //     console.log(index);
+    //     $(item).css('background', 'blue')
+    //     // console.log(item);
+    // })
+//上面的作用就是使用代码自己过滤
+//     $('li').filter(function (index,item) {
+//         if (Number($(item).attr('data-index'))>5){
+//             return true
+//         }
+//     }).css('background', '#f00')
+
+
+    // $('li').eq(3).css('background', 'deepskyblue')
+
+    //取反
+    // $('li').not(document.getElementById('xxx')).css('background', 'deepskyblue')
+    //取反还可以有函数
+    // $('li').not(function (index, item) {
+    //     if ($(item).attr('data-index') == 5){
+    //         return true
+    //     }
+    // }).css('background', 'deepskyblue')
+
+    //slice(参数1，参数2)
+    // $('li').slice(0,4).css('background', 'deepskyblue')
+    //参数一：开始索引值
+    //参数二：小于参数二
+
+    //is 判断有无类名元素
+    // $('li').filter(function (index, dom) {
+    //     console.log($(dom).is('#xxx'));
+    // })
+
+    // has
+    $('li').filter(function (index,dom) {
+        console.log($(dom).hasClass('spe'));
+    })
+    // 2 false
+    //   true
+    // 7 false (前两个不存在false  后面那个index=2存在 后面全部不存在  )
+
+
+
+    //   .filter(“选择器”)
+    //   如果基本选择器和过滤选择器不方便往选择函数中写，
+    //   那么就写在.filter()方法中。
+
+    //   .filter(function(index){index,原生dom})
+    //   .filter()中可以写筛选函数：function(index){}，
+    //   其中index表示当前筛选函数的索引值。满足条件的元素，
+    //   return true表示筛选出该元素。
+
+    //   $img.eq(1)
+    //   是$img.filter(':eq(1)')的快捷方式
+
+    //   $img.not(":eq(1)")
+    //   是$img.filter(':not(:eq(1))')的快捷方式
+
+    //   .slice(参数1,参数2)	筛选 参数1<= 索引值 <参数2
+    //   .is(“选择器”)	.filter()返回的是满足条件的元素集；
+    //
+    //    .is()是用于判断该元素是否满足选择器的条件：
+    //    如果是，返回true，否则返回false.
+    //
+    //    .hasClass(“类名”)	.is(“.类名”)的快捷方式
+
+</script>
+</html>

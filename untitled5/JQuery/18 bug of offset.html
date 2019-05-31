@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #box{
+            width: 100px;
+            height: 100px;
+            background: deepskyblue;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+</body>
+<script>
+    var box = document.getElementById('box');
+    // box.offsetWidth = border + padding +width
+
+
+    // var timer = setInterval(()=>{
+        // box.style.width = box.offsetWidth - 1 + 'px';
+    // },20)
+    //本来应该是减小的 但是offsetWidth 中有border 就会适得其反
+
+    //正确的方法
+    var timer = setInterval(()=>{
+                                //精确到width
+        box.style.width = parseInt(getComputedStyle(box).width)
+        -1 + 'px';
+    },20)
+</script>
+</html>

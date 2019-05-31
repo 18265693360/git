@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        td, th{
+            border: 1px solid #000;
+            padding: 10px 20px;
+        }
+        table{
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    姓名：<input type="text" id="name">
+    姓名：
+    <select  id="sex">
+        <option value="未选择">请选择</option>
+        <option value="男人">男人</option>
+        <option value="女人">女人</option>
+    </select>
+    <button id="btn">添加</button>
+    <br>
+
+<table id="table">
+    <tr>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>操作</th>
+    </tr>
+    <tr>
+        <td>素素</td>
+        <td>女</td>
+        <td><button>删除</button></td>
+    </tr>
+</table>
+<button id="getChild">查看所有的孩子</button>
+</body>
+<script src="jquery.js"></script>
+<script>
+    //     .parent()	选择父
+    //     .children()	孩子
+    //     .sibling()	亲兄弟姐妹，亲同胞
+    //     .next()		选择选中元素的紧挨着的亲弟弟或妹妹
+    //     .nextAll() 	选择选中元素的所有亲弟弟妹妹
+    //     .prev() 	    选择选中元素的紧挨着的亲哥哥或姐姐
+    //     .prevAll()  	选择选中元素的所有的亲哥哥姐姐
+    //     .find(选择器)	选择选中元素的后代
+
+    $('#btn').click(function () {
+        var name = $('#name').val();//val = value 获取value值
+        var sex = $('#sex').val();
+        var $item = $('<tr><td>'+name+'</td><td>'+sex+'</td><td><button>删除</button></td></tr>');
+        $('#table').append($item);
+        $('#name').val('');
+        $('#sex').val('未选');
+    })
+
+    $('#table').click(function (ev) {
+        ev = ev || window.event;
+        console.log(ev);
+        //ev 事件对象 记录事件发生的详细信息
+        if (ev.target.nodeName == 'BUTTON'){
+            //因为表中的内容 父亲是td td的父亲是 tr 因此需要两个parent
+            $(ev.target).parent().parent().remove();
+        }
+    })
+    // $('#getChild').click(function () {
+    //     console.log($('#table').children());//表格会自动添加tbody
+        //0: tbody
+        // length: 1
+    // })
+
+    //获得tr 再加一个children()
+    $('#getChild').click(function () {
+        console.log($('#table').children().children());//表格会自动添加tbody
+        // 0: tr
+        // 1: tr
+    })
+
+
+</script>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 200px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    我是块级
+</div>
+</body>
+<script src="jquery.js"></script>
+<script>
+    //原生
+    // var box = document.querySelector('.box')
+    //('')里面css是什么里面就是什么
+    // box.style.width = "200px";
+    // box.style.height = "200px";
+    // box.style.border = "1px solid #f00";
+    // box.style.fontSize = "30px";
+
+
+    //JQ
+    // .css
+    console.log($('.box').css('width'));//访问css
+
+    //设置css
+    // $('.box').css('height', 600)//里面可以是数字 也可以是字符串
+    // $('.box').css('width', '500px' )
+
+    //""字符串中必须加px  纯数字不用加
+    //对象语法
+    $('.box').css({
+        width: 200,
+        height:200,
+        border: "1px solid #ff0",
+        fontSize: "20px", //里面用的是驼峰 不能用连接符
+    })
+
+    //链式调用  JQ中每次操作都会返回上一个你操作的元素 函数会返回box
+    $('.box')
+        .css('width', 200)
+        .css('height',300)
+        .css('border','1px solid #f00'),
+        .css('font-size','30px');
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>
