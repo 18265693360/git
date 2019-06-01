@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            position: relative;
+            width: 300px;
+            height: 400px;
+        }
+        .container .left-img{
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        /*scale规模 就是那一块小方块*/
+        .container .scale{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,0,.8);
+            cursor: move;
+            display: none;
+            /*cursor 光标*/
+        }
+        .right-box{
+            position: absolute;
+            left: 310px;
+            /*两块分开 中间隔开10px*/
+            top: 0;
+            width: 300px;
+            height: 400px;
+            border: 1px solid #000;
+            background: url("./imgs/big.jpg") no-repeat;
+            background-size: 600px 800px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <img src="./imgs/big.jpg" class="left-img" alt="">
+    <div class="scale"></div>
+</div>
+<div class="right-box"></div>
+</body>
+<script>
+    // 左边的照片盒子 / 右边最大的背景图 = 放大镜 / 右边的盒子
+    // 左边的照片盒子 / 右边最大的背景图 = 放大镜 / 右边的盒子 = 1/2；
+    //
+    // 放大镜  200px 200px  => 右边的盒子宽度是 400px 高度是 400px
+    // 左边的盒子 300px 400px  => 右边最大的背景图600px  高度是800px;
+    function $(selector) {
+        return document.querySelector(selector);
+    }
+    var container = $('.container');
+    var leftImg = $('.left-img');
+    var scale = $('.scale');
+    var rightBox = $('.right-box');
+    var containerWidth = container.offsetWidth;
+    var containerHeight = container.offsetHeight;
+
+    container.onmouseover = function () {
+        container.onmousemove = function (ev) {
+            ev=ev || window.event;
+
+            scale.style.display = 'block';
+            //scale的移动
+            var left = ev.clientX - 100;
+            var top = ev.clientY - 100;
+
+            //限制sacle的移动
+            if (left > containerWidth - 200){
+                left = containerWidth - 200;
+            } else if (left<0){
+                left = 0;
+            }
+            if (top<0){
+                top = 0;
+            }else if (top > containerHeight - 200){
+                top = containerHeight -200;
+            }
+
+            //放大镜上下移动
+            scale.style.left = left + 'px';
+            scale.style.top = top + 'px';
+            rightBox.style.display = 'block';
+
+            //控制左边盒子的显示
+            //左边盒子的上下移动
+            //还是不太懂 -left*2
+            rightBox.style.backgroundPositionX = -left*2 + 'px';
+            rightBox.style.backgroundPositionY = -top*2   + 'px';
+        };
+        container.onmouseout = function () {
+            container.onmousemove = null;
+            scale.style.display = 'none';
+            rightBox.style.display = 'none';
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

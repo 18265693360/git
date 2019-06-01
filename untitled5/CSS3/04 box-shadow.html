@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .cont{
+            border: 1px solid #000;
+            width: 200px;
+            height: 200px;
+            /*中间没有哦逗号隔开*/
+            /*-moz-box-shadow:0px -2px 19px #333333; */
+            -webkit-box-shadow:0px -2px 19px #333333 inset;
+            /*box-shadow:0px -2px 19px #333333;*/
+
+            /*inset内阴影*/
+        }
+    </style>
+</head>
+<body>
+<div class="cont">
+
+</div>
+</body>
+<script>
+    // 羽化: 模糊的意思
+    // 格式：box-shadow: 右 下 羽化值 延展 颜色 inset
+    //
+    // 注意细节：
+// 1，前两个参数为0时，可以去模拟发光效果。
+// 2，如果需要设置内阴影，那么需要给box-shadow添加上inset值就可以。
+// 3，可以给盒子设置多个阴影，只需要在多个阴影之间以逗号分隔就可以。
+// 4，从IE9开始支持盒子阴影。
+
+</script>
+</html>

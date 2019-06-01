@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            /*number	元素距离视图的距离，以像素计。*/
+            /*none	默认值。与 0 相同。不设置透视。*/
+            /*perspective: number|none;*/
+            perspective: 2000px;
+            height: 1000px;
+            transform-style: preserve-3d;
+            /*transform-style: flat|preserve-3d;*/
+            /*值	描述*/
+            /*flat	子元素将不保留其 3D 位置。*/
+            /*preserve-3d	子元素将保留其 3D 位置。*/
+        }
+        body:hover .container{
+            transform: rotateX(720deg) rotateY(720deg);
+        }
+        .container{
+            transform-style: preserve-3d;
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 100px auto;
+            border: 1px solid #000;
+            transition: all linear 5s;
+            /*transition:all 0.5s linear;进度条动画效果 制作原理*/
+        }
+        .box{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 400px;
+            height: 400px;
+            color: #f00;
+            font-weight: 800;
+            text-align: center;
+            font-size: 100px;
+            line-height: 400px;
+        }
+        .box:nth-child(1){
+            background: url("./imgs/1.jpg") no-repeat;
+        /*translateZ(z)	定义 3D 转换，只是用 Z 轴的值。*/
+            transform: translateZ(200px);
+        }
+        .box:nth-child(2){
+            background: url("./imgs/2.jpg") no-repeat;
+            transform: rotateX(90deg) translateZ(200px);
+        }
+        /*rotateX(angle)	定义沿着 X 轴的 3D 旋转。*/
+        /*rotateY(angle)	定义沿着 Y 轴的 3D 旋转。*/
+        /*rotateZ(angle)	定义沿着 Z 轴的 3D 旋转。*/
+        /*顺时针(正角度值)/逆时针(负角度值)转；*/
+        /*就近转到目标角度*/
+        .box:nth-child(3){
+            background: url("./imgs/3.jpg")no-repeat;
+            transform: rotateX(180deg) translateZ(200px);
+        /*该translateZ() CSS函数沿着z轴在三维空间中重新定位元素，即，从观察者的角度而言更近或者更远。这个变换是由一个<length>元素定义的，它指定元素向内或向外移动的距离。*/
+        }
+        .box:nth-child(4){
+            background: url("./imgs/4.jpg")no-repeat;
+            transform: rotateX(270deg) translateZ(200px);
+        }
+        .box:nth-child(5){
+            background: url("./imgs/5.jpg")no-repeat;
+            transform: rotateY(90deg) translateZ(200px);
+        }
+        .box:nth-child(6){
+            background: url("./imgs/6.jpg")no-repeat;
+            transform: rotateY(-90deg) translateZ(200px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+    </div>
+</body>
+</html>

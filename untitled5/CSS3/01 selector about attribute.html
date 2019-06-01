@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*input[title]{*/
+            /*background: #f00;*/
+        /*}*/
+        /*前提是需要有title属性在里面*/
+        /*input[type='text']{*/
+            /*background: #409eff;            */
+        /*}*/
+        /*input[type *= 'password']{*/
+            /*background: #409;*/
+        /*}*/
+        /*input[type ^= 'search']{*/
+            /*background: #ffe8a1;*/
+        /*}*/
+        /*input[type $= 'search']{*/
+            /*background: #ffe8a1;*/
+        /*}*/
+        /*input[type ~= 'search']{*/
+            /*background: #ffe8a1;*/
+        /*}*/
+        /*input[type |= 'search']{*/
+            /*background: #ffe8a1;*/
+        /*}*/
+
+        .link:link{
+            /*link 用户未点击时的状态*/
+            text-decoration: #ffe8a1;
+            color: #409eff;
+        }
+        .link:visited{
+            color: #ed969e;
+        }
+        .link:hover{
+            color: #f5c6cb;
+        }
+        .link:active{
+            color: #ffe8a1;
+        }
+    </style>
+</head>
+<body>
+
+<a href="https://www.baidu.com" class="link">百度一下你就知道</a>
+
+<input type="text" title="">
+<input type="password">
+<input type="checkbox">
+<input type="search">
+</body>
+<scritp>
+    <!--属性选择器-->
+    <!--选择器	说明-->
+    <!--input[title]	选择具有title的input元素-->
+    <!--input[title=”bz”]	选择具有title属性，具属性值为”bz”-->
+    <!--input[title *= “bz”]	选择具有title属性，且属性值中包含有”bz”-->
+    <!--input[title ^= “bz”]	选择具有title属性，且属性值中以”bz”开头-->
+    <!--input[title $= “bz”]	选择具有title属性，且属性值中以”bz”结束-->
+    <!--input[title ~= “bz”]	选择具有title属性，且属性值中”bz”是以空格分隔的独立部分-->
+    <!--input[title |= “bz”]	选择具有title属性，且属性值中以”bz”或”bz-”开头-->
+
+    
+</scritp>
+</html>

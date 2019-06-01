@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 600px;
+            height: 300px;
+            background: url("./imgs/3.jpg") no-repeat;
+            border: 6px solid rgba(0,0,0,.5);
+            padding: 10px;
+            background-clip: padding-box;
+            /*background-size: cover;*/
+
+/*Origin: 起源，原点*/
+            /*背景起源就是研究背景是相对于谁进行定位的。默认的，它是相对于盒子的padding进行定位的。*/
+            /*background-origin:padding-box | border-box | content-box*/
+            /*background-origin的默认值是padding-box*/
+            /*背景起源的取值	说明*/
+            /*padding-box	默认的，背景图相对于内边距框进行定位*/
+            /*border-box	背景图相对于边框盒进行定位*/
+            /*content-box	背景图相对于内容框进行定位*/
+
+            -webkit-background-origin: border-box;
+            /*background-origin: 三个取值 padding-box以边框里边为起点 border-box: 以边框的外边界为起点 content-box padding起点进行裁剪*/
+            background-origin: border-box;: #000;
+
+            /*//裁剪*/
+            /*background-clip: border-box;*/
+            /*background-clip: border-box;
+            三个取值 border-box 默认不进行裁剪
+                    padding-box 以边界进行裁剪
+                    content-box 以内容为起点进行裁剪
+            */
+            /*background-size: contain;*/
+            /*background-size: cover;
+            取值会覆盖整个盒子 但是尽量保持图片的比例不变的情况
+            如果写两个100% 就不会考虑比例的问题
+            */
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    我是一个部分
+</div>
+</body>
+</html>
